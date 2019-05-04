@@ -3,14 +3,14 @@ module ArgRev (
     ) where
 
 
-import System.Cmd
 import System.Environment
+import System.Process
 
 
 main :: IO ()
 main = do
     program : args <- getArgs
-    rawSystem program $ reverse args
+    _ <- rawSystem program $ reverse args
     return ()
 
 
